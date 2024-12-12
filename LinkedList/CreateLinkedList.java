@@ -1,23 +1,44 @@
 public class CreateLinkedList {
     static class Node{
-        int data;
+        int value;
         Node next;
+        
+        Node(int value){
+            this.value=value;
+        }
+    }
 
-        Node(int data){
-            this.data=data;
+    static class LinkedList{
+        Node head=null;
+        Node tail=null;
+
+        void add(int value){
+            Node n=new Node(value);
+            if(head==null){
+                head=n;
+            }
+            else{
+                tail.next=n;
+            }
+            tail=n;
+        }
+
+        void display(){
+            Node start=head;
+            while(start!=null){
+                System.out.print(start.value+" ");
+                start=start.next;
+            }
         }
     }
     public static void main(String[] args) {
-        Node a=new Node(12);
-        Node b=new Node(78);
-        Node c=new Node(90);
-        Node d=new Node(55);
+        LinkedList ll=new LinkedList();
+        ll.add(29);
+        ll.add(90);
+        ll.add(54);
+        ll.add(89);
 
-        a.next=b;
-        b.next=c;
-        c.next=d;
-        d.next=null;
+        ll.display();
 
-        System.out.print(a.data+" "+b.data+" "+c.data+" "+d.data);
     }
 }
