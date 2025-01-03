@@ -5,8 +5,7 @@ public class PopMethod {
         public static class Stack {
             int index = 0;
             int a[] = new int[5];
-    
-            
+
             public void push(int val) {
                 a[index] = val;
                 index++;
@@ -22,7 +21,8 @@ public class PopMethod {
                 if (index == 0) {
                     System.out.println("empty stack");
                     return -1;
-                } else {
+                } 
+                else {
                     int top = a[index - 1];
                     a[index - 1] = 0;
                     index--;
