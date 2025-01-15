@@ -19,7 +19,7 @@ public class DeleteAtAny {
         while(st.size()>0){
             temp.push(st.pop());
         }
-
+        
         while(temp.size()>0){
             System.out.print(temp.pop()+" ");
         }
